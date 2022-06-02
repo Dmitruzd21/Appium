@@ -19,7 +19,9 @@ public class AppiumTestsForUiAutomator {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("platformName", "Android");
         desiredCapabilities.setCapability("appium:deviceName", "Some name");
-        desiredCapabilities.setCapability("appium:app", "C:\\Users\\79168\\Desktop\\SoftwareTestingEngineer\\MobileHomeWorks\\AndroidStudioProjects\\2.2 UI Automator\\sample\\app\\build\\intermediates\\apk\\debug\\app-debug.apk");
+        desiredCapabilities.setCapability("appium:automationName", "UiAutomator2");
+        desiredCapabilities.setCapability("appium:appPackage", "ru.netology.testing.uiautomator");
+        desiredCapabilities.setCapability("appium:appActivity", "ru.netology.testing.uiautomator.MainActivity");
         desiredCapabilities.setCapability("appium:ensureWebviewsHavePages", true);
         desiredCapabilities.setCapability("appium:nativeWebScreenshot", true);
         desiredCapabilities.setCapability("appium:newCommandTimeout", 3600);
@@ -47,7 +49,7 @@ public class AppiumTestsForUiAutomator {
         inputField.sendKeys(textInInputField);
         MobileElement buttonActivity = (MobileElement) driver.findElementById("ru.netology.testing.uiautomator:id/buttonActivity");
         buttonActivity.click();
-        MobileElement textInAnotherActivity = (MobileElement) driver.findElementById("text");
+        MobileElement textInAnotherActivity = (MobileElement) driver.findElementById("ru.netology.testing.uiautomator:id/text");
         Assertions.assertEquals(textInInputField,textInAnotherActivity.getText());
     }
 
